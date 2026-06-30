@@ -1,5 +1,5 @@
 package org.example;
 
-public class AnimalState {
-    
+public interface AnimalState {
+    String getStatus();
 }

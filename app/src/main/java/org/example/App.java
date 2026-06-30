@@ -12,24 +12,15 @@ public class App {
                 "Healthy"
         );
 
-        Animal luna = AnimalFactory.createAnimal(
-                AnimalType.CAT,
-                2,
-                "Luna",
-                2,
-                "Healthy"
-        );
-
-        Animal coco = AnimalFactory.createAnimal(
-                AnimalType.RABBIT,
-                3,
-                "Coco",
-                1,
-                "Healthy"
-        );
-
         System.out.println(buddy);
-        System.out.println(luna);
-        System.out.println(coco);
+
+        buddy.setCurrentState(new AvailableState());
+        System.out.println(buddy);
+
+        buddy.setCurrentState(new PendingState());
+        System.out.println(buddy);
+
+        buddy.setCurrentState(new AdoptedState());
+        System.out.println(buddy);
     }
 }

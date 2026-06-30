@@ -5,13 +5,14 @@ public abstract class Animal {
     private String name;
     private int age;
     private String healthStatus;
-    // private AnimalState currentState;
+    private AnimalState currentState;
 
     public Animal(int id, String name, int age, String healthStatus) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.healthStatus = healthStatus;
+        this.currentState = new IntakeState();
     }
 
     public int getId() {
@@ -34,6 +35,14 @@ public abstract class Animal {
         this.healthStatus = healthStatus;
     }
 
+    public AnimalState getCurrentState() {
+        return currentState;
+    }
+
+    public void setCurrentState(AnimalState currentState) {
+        this.currentState = currentState;
+    }
+
     public abstract String getSpecies();
 
     @Override
@@ -42,6 +51,7 @@ public abstract class Animal {
                 " [ID=" + id +
                 ", Name=" + name +
                 ", Age=" + age +
-                ", Health=" + healthStatus + "]";
+                ", Health=" + healthStatus +
+                ", Status=" + currentState.getStatus() + "]";
     }
 }
