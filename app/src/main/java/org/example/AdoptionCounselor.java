@@ -10,4 +10,8 @@ public class AdoptionCounselor extends Staff {
     public String getRole() {
         return "Adoption Counselor";
     }
+    public void approveAdoption(Animal animal) {
+        System.out.println(getName() + " approved the adoption of " + animal.getName() + ".");
+        animal.setCurrentState(new AdoptedState());
+    }
 }

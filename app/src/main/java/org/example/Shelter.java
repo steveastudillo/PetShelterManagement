@@ -39,7 +39,7 @@ public void processDay(int day) {
     if (day == 1) {
         System.out.println("All animals are now available for adoption.");
         for (Animal animal : animals) {
-            animal.setCurrentState(new AvailableState());
+            Veterinarian vet = (Veterinarian) staff.get(0);
         }
 
     } else if (day == 2) {
@@ -63,8 +63,12 @@ public void processDay(int day) {
         System.out.println("Buddy was adopted by " + adopters.get(0).getName() + ".");
         System.out.println(staff.get(1).getName() + " finalized Buddy's adoption.");
         animals.get(0).setCurrentState(new AdoptedState());
-    } else {
+    } else if (day == 5) { 
         System.out.println("Routine shelter operations.");
+    }
+    else if (day == 6) {
+        Veterinarian vet = (Veterinarian) staff.get(0);
+        vet.examineAnimal(animals.get(3));
     }
 }
 

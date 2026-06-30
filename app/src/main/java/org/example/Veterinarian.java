@@ -10,4 +10,10 @@ public class Veterinarian extends Staff {
     public String getRole() {
         return "Veterinarian";
     }
+    
+    public void examineAnimal(Animal animal) {
+        System.out.println(getName() + " examined " + animal.getName() + ".");
+        animal.setHealthStatus("Healthy");
+        System.out.println(animal.getName() + " is now marked as Healthy.");
+    }
 }
