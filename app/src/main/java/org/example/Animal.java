@@ -1,11 +1,11 @@
 package org.example;
 
 public abstract class Animal {
-
     private int id;
     private String name;
     private int age;
     private String healthStatus;
+    // private AnimalState currentState;
 
     public Animal(int id, String name, int age, String healthStatus) {
         this.id = id;
