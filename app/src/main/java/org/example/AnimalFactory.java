@@ -3,9 +3,7 @@ package org.example;
 public class AnimalFactory {
 
     private AnimalFactory() {
-        // Prevent instantiation
     }
-
     public static Animal createAnimal(
             AnimalType type,
             int id,
