@@ -7,6 +7,15 @@
 
 The Pet Shelter Management System simulates daily operations of a pet shelter. This system will track animals, staff assignments, adoptions, and animal care while monitoring their state changes over time.
 
+## Features
+- Automatically starts with 5 animals in the shelter
+- Creates new animals using Factory Patterns
+- Tracts animal status using state pattern
+- Simulates when an animal arrives at shelter
+- Has Verterinarian and Adoption Counselor 
+- Runs automatically over a 7 day week.
+- Simulates medical and provides health updates
+
 ## Planned Design Patterns
 
 Factory Pattern:
@@ -29,6 +38,27 @@ Animals will be created using Factory pattern and assigned an inital state after
 4. R2.1 Staff Roles
 5. R3.1 Adoption Preferences
 6. R3.3 Adoption Outcomes
+
+## Running The Project
+Build  the project: 
+./gradlew build
+
+Running the App:
+./gradlew run
+
+Running Test:
+./gradlew test
+
+## Testing
+Junit tests include:
+- Animal Factory
+- Shelter functionaility
+- Adopter functionaility
+- Veterinarian functionaility
+
+67% code coverage with Jacoco
+
+## Screencast Link:
 
 ## Concerns / Questions
 

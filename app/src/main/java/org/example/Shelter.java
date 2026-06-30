@@ -1,5 +1,5 @@
 package org.example;
-
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +39,7 @@ public void processDay(int day) {
     if (day == 1) {
         System.out.println("All animals are now available for adoption.");
         for (Animal animal : animals) {
-            Veterinarian vet = (Veterinarian) staff.get(0);
+            animal.setCurrentState(new AvailableState());
         }
 
     } else if (day == 2) {
@@ -69,6 +69,8 @@ public void processDay(int day) {
     else if (day == 6) {
         Veterinarian vet = (Veterinarian) staff.get(0);
         vet.examineAnimal(animals.get(3));
+    } else {
+        System.out.println("Routine shelter operations.");
     }
 }
 
@@ -121,6 +123,6 @@ public void printAnimals() {
 }
 
 public List<Animal> getAnimals() {
-    return animals;
+    return Collections.unmodifiableList(animals);
     }
 }
