@@ -1,0 +1,57 @@
+package org.example;
+
+public abstract class Animal {
+    private int id;
+    private String name;
+    private int age;
+    private String healthStatus;
+    private AnimalState currentState;
+
+    public Animal(int id, String name, int age, String healthStatus) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.healthStatus = healthStatus;
+        this.currentState = new IntakeState();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getHealthStatus() {
+        return healthStatus;
+    }
+
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+
+    public AnimalState getCurrentState() {
+        return currentState;
+    }
+
+    public void setCurrentState(AnimalState currentState) {
+        this.currentState = currentState;
+    }
+
+    public abstract String getSpecies();
+
+    @Override
+    public String toString() {
+        return getSpecies() +
+                " [ID=" + id +
+                ", Name=" + name +
+                ", Age=" + age +
+                ", Health=" + healthStatus +
+                ", Status=" + currentState.getStatus() + "]";
+    }
+}
