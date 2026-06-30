@@ -8,6 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'jacoco'
     id 'checkstyle'
     id 'com.github.spotbugs' version '6.1.0'
 }
@@ -50,4 +51,11 @@ checkstyle {
 
 spotbugs {
     ignoreFailures = false
+}
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }
